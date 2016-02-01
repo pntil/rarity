@@ -1,13 +1,15 @@
-import fs from 'fs';
+'use strict';
 
-import names from './data/names';
-import colors from './data/colors';
+const fs = require('fs');
+const path = require('path');
 
+const names = require('./data/names');
+const colors = require('./data/colors');
 const kinds = ['Земная пони', 'Единорог', 'Пегас', 'Аликорн'];
-const FILENAME = 'model';
 
-// TODO: Get this from helpers.js.
-const pickNRandomElementsOfArray = (arr, n=1) => {
+const filename = path.join(__dirname, '../example', 'model.json');
+
+const pickNRandomElementsOfArray = function(arr, n) {
   let output = [];
   for (var i=0; i<n; i++) {
     let randomElem = arr[Math.floor(Math.random() * arr.length)];
@@ -16,12 +18,12 @@ const pickNRandomElementsOfArray = (arr, n=1) => {
   return output;
 };
 
-const generateCatalogue = () => {
-  const model = names.map((name) => {
+const generateCatalogue = function() {
+  const model = names.map(function(name) {
     return {
       name: name,
-      color: pickNRandomElementsOfArray(actualColors)[0],
-      kind: pickNRandomElementsOfArray(kinds)[0],
+      color: pickNRandomElementsOfArray(actualColors, 1)[0],
+      kind: pickNRandomElementsOfArray(kinds, 1)[0],
       price: +(Math.random() * 1980 + 20).toFixed(2),
       is_new: Math.random() > 0.9
     };
@@ -41,10 +43,10 @@ const model = {
 
 
 fs.writeFile(
-  FILENAME + '.json',
+  filename,
   JSON.stringify(model, null, 2),
-  (err) => {
+  function(err) {
     if (err) return console.log(err);
-    console.log(`${FILENAME}.json created.`);
+    console.log(`${filename} created.`);
   }
 );

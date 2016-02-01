@@ -1,10 +1,9 @@
 'use strict';
 
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
 
 var config = {
-  devtool: 'source-map',
   entry: {
     app: ['./app/main.js']
   },
@@ -16,10 +15,10 @@ var config = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/public/',
+    path: path.resolve(__dirname, 'example'),
+    publicPath: '/example/',
     filename: 'bundle.js',
-  },
+  }
 };
 
 module.exports = config;
