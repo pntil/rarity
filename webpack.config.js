@@ -12,7 +12,7 @@ var config = {
     loaders: [
       { test: /\.json$/, loader: 'json'},
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
-      { test: /\.less$/, loader: 'style!css!less'}
+      { test: /\.less$/, loader: 'style!css!postcss!less'}
     ]
   },
   output: {
