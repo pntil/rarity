@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import Portal from './portal';
 import Filter from './filter';
 import List from './list';
-import { pickNRandomFromArray } from '../helpers';
+import { pickNUniqueRandomFromArray } from '../helpers';
 
 class Rarity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: pickNRandomFromArray(props.model.catalogue, 20),
-      isVisible: true
+      list: pickNUniqueRandomFromArray(props.model.catalogue, 20),
+      isVisible: false
     };
   }
 
@@ -26,7 +26,7 @@ class Rarity extends React.Component {
     });
 
     this.setState({
-      list: pickNRandomFromArray(filteredCatalogue, 20)
+      list: pickNUniqueRandomFromArray(filteredCatalogue, 20)
     });
   }
 
