@@ -7,7 +7,7 @@ const List = (props) => {
         <div className="rarity_catalogue--cell">{elem.name}</div>
         <div className="rarity_catalogue--cell">{elem.color}</div>
         <div className="rarity_catalogue--cell">{elem.kind}</div>
-        <div className="rarity_catalogue--cell">{elem.price}</div>
+        <div className="rarity_catalogue--cell rarity_catalogue--cell-price">{elem.price}</div>
         <div className="rarity_catalogue--cell">{elem.is_new ? 'Новинка' : null}</div>
       </div>
     );

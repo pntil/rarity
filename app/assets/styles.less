@@ -16,19 +16,53 @@
 
 .rarity_overlay--wrap {
   position: absolute;
-  top: -9999px;
-  right: -9999px;
-  bottom: -9999px;
-  left: -9999px;
+  top: 140px;
+  left: 50%;
 
   box-sizing: border-box;
-  max-width: 80%;
-  height: 600px;
-  margin: auto;
+  width: 1000px;
+  margin-left: -500px;
   padding: 40px;
 
   background-color: #fff;
 }
+
+
+.rarity_filter {
+  margin-bottom: 12px;
+  padding: 12px 10px;
+
+  background-color: #eee;
+}
+
+.rarity_filter--select {
+  font-size: 16px;
+
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.rarity_filter--text_input {
+  font-size: 16px;
+  line-height: 24px;
+
+  width: 100px;
+  height: 24px;
+  margin-right: 20px;
+}
+
+.rarity_filter--label {
+  font-size: 16px;
+  line-height: 24px;
+
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.rarity_filter--button {
+  margin-left: 30px;
+}
+
 
 .rarity_catalogue {
   font-size: 16px;
@@ -42,4 +76,10 @@
 
 .rarity_catalogue--cell {
   display: table-cell;
+
+  padding: 12px 15px;
+}
+
+.rarity_catalogue--cell-price {
+  text-align: right;
 }

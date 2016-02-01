@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Params extends React.Component {
+class Filter extends React.Component {
   onFilterButtonClick() {
     const refs = this.refs;
 
@@ -31,27 +31,27 @@ class Params extends React.Component {
     });
 
     return (
-      <div>
-        <select ref="color">
+      <div className="rarity_filter">
+        <select className="rarity_filter--select" ref="color">
           <option value="-1">Цвет...</option>
           {colorOptions}
         </select>
 
-        <select ref="kind">
+        <select className="rarity_filter--select" ref="kind">
           <option value="-1">Вид...</option>
           {kindOptions}
         </select>
 
-        <input type="number" ref="minPrice" placeholder="Минимальная цена" />
-        <input type="number" ref="maxPrice" placeholder="Максимальная цена" />
+        <input className="rarity_filter--text_input" type="number" ref="minPrice" placeholder="Минимальная цена" />
+        <input className="rarity_filter--text_input" type="number" ref="maxPrice" placeholder="Максимальная цена" />
 
-        <label htmlFor="new">Новинки</label>
         <input type="checkbox" ref="newOnly" id="new" />
+        <label className="rarity_filter--label" htmlFor="new">Новинки</label>
 
-        <button onClick={::this.onFilterButtonClick}>Найти</button>
+        <button className="rarity_filter--button" onClick={::this.onFilterButtonClick}>Найти</button>
       </div>
     );
   }
 }
 
-export { Params as default };
+export { Filter as default };

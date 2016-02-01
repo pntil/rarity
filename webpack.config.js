@@ -1,5 +1,6 @@
 'use strict';
 
+var autoprefixer = require('autoprefixer');
 var path = require('path');
 var webpack = require('webpack');
 
@@ -18,7 +19,12 @@ var config = {
     path: path.resolve(__dirname, 'example'),
     publicPath: '/example/',
     filename: 'bundle.js',
-  }
+  },
+  postcss: [
+    autoprefixer({
+      browsers: ['> 1%', 'ie 11']
+    })
+  ]
 };
 
 module.exports = config;

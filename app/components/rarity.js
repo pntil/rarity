@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Portal from './portal';
-import Params from './params';
+import Filter from './filter';
 import List from './list';
 import { pickNRandomFromArray } from '../helpers';
 
@@ -55,7 +55,7 @@ class Rarity extends React.Component {
     return (
       <Portal className={overlayClassName} onClick={::this.toggleOverlay}>
         <div className="rarity_overlay--wrap" onClick={stopPropagation}>
-          <Params colors={this.props.model.colors}
+          <Filter colors={this.props.model.colors}
                   kinds={this.props.model.kinds}
                   onFilterButtonClick={::this.onFilterButtonClick} />
 
